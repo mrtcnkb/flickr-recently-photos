@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/photoListFragment">
+
+    <fragment
+        android:id="@+id/photoListFragment"
+        tools:layout="@layout/photo_list_fragment"
+        android:name="com.mrtcnkb.recentphotos.ui.PhotoListFragment"
+        android:label="PhotoListFragment" >
+        <action
+            android:id="@+id/action_photoListFragment_to_photoDetailFragment"
+            app:destination="@id/photoDetailFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoDetailFragment"
+        tools:layout="@layout/photo_detail_fragment"
+        android:name="com.mrtcnkb.recentphotos.ui.PhotoDetailFragment"
+        android:label="PhotoDetailFragment" />
+
+
+</navigation>
