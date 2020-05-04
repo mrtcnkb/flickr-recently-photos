@@ -24,6 +24,9 @@ ext {
     okHttpVersion = "4.2.1"
     retrofitVersion = '2.6.2'
     gsonVersion = '2.8.6'
+    kotlinVersion = '1.3.50'
+    stethoVersion = '1.5.1'
+    multiDexVersion = '2.0.1'
 }
 
 allprojects {

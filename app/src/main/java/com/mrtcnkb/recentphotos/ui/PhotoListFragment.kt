@@ -10,6 +10,7 @@ import com.mrtcnkb.recentphotos.R
 import com.mrtcnkb.recentphotos.databinding.PhotoListFragmentBinding
 import com.mrtcnkb.recentphotos.ui.base.BaseFragment
 import com.mrtcnkb.recentphotos.viewmodel.VMPhotoListFragment
+import com.muratcan.domain.PhotoListUseCase
 
 class PhotoListFragment : BaseFragment<VMPhotoListFragment, PhotoListFragmentBinding>(){
 
