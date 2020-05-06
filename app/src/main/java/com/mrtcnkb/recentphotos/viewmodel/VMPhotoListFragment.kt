@@ -1,27 +1,32 @@
 package com.mrtcnkb.recentphotos.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.mrtcnkb.recentphotos.viewmodel.base.BaseViewModel
 import com.muratcan.domain.PhotoListUseCase
+import com.muratcan.model.remote.Photos
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxkotlin.plusAssign
 import javax.inject.Inject
 
 class VMPhotoListFragment @Inject constructor(
     private val photoListUseCase: PhotoListUseCase
 ) : BaseViewModel() {
 
-    var photoListStatus = MutableLiveData<String>()
+    internal var photosObject = MutableLiveData<Photos>()
 
-    fun fetchRecentlyPhotos() {
+    fun fetchRecentlyPhotos(page: Int) {
         photoListUseCase
-            .fetchRecentlyPhotos(1, 2)
+            .fetchRecentlyPhotos(page = page)
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe{ response ->
+            .subscribe({ response ->
                 response?.let {
-                    photoListStatus.value = it.stat
+                    photosObject.value = it.photos
                 }
+            },{
+                Log.e("RxError", "--> ${it.message}")
             }
+            )
             .also {
                 disposables += it
             }

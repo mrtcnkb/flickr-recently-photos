@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="photo"
+            type="com.muratcan.model.remote.Photo" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/photo_view"
+                    app:loadImage="@{photo.photoUri}"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="@color/transparent"
+                    android:text="@{photo.title}"
+                    app:visibleIf="@{photo.titleIsNotBlank}"
+                    android:textColor="@color/md_white_1000"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </FrameLayout>
+</layout>

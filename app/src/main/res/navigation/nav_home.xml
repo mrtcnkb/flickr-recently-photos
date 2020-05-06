@@ -8,21 +8,27 @@
     <fragment
         android:id="@+id/photoListFragment"
         tools:layout="@layout/photo_list_fragment"
-        android:name="com.mrtcnkb.recentphotos.ui.PhotoListFragment"
-        android:label="PhotoListFragment" >
+        android:name="com.mrtcnkb.recentphotos.ui.view.PhotoListFragment"
+        android:label="Flickr - Recently Photos" >
         <action
             android:id="@+id/action_photoListFragment_to_photoDetailFragment"
             app:destination="@id/photoDetailFragment"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
+            app:exitAnim="@anim/slide_out_left">
+            <argument
+                android:name="photoObject"
+                android:defaultValue="@null"
+                app:argType="com.muratcan.model.remote.Photo"
+                app:nullable="true" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/photoDetailFragment"
         tools:layout="@layout/photo_detail_fragment"
-        android:name="com.mrtcnkb.recentphotos.ui.PhotoDetailFragment"
-        android:label="PhotoDetailFragment" />
+        android:name="com.mrtcnkb.recentphotos.ui.view.PhotoDetailFragment"
+        android:label=""/>
 
 
 </navigation>

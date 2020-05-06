@@ -55,4 +55,7 @@ abstract class BaseFragment<VM : ViewModel, DB : ViewDataBinding> : DaggerFragme
         Toast.makeText(context, string, Toast.LENGTH_SHORT).show()
     }
 
+    protected fun Any?.runIfNull(block: () -> Unit) {
+        if (this == null) block()
+    }
 }

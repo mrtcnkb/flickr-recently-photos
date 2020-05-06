@@ -8,20 +8,26 @@
             type="com.mrtcnkb.recentphotos.viewmodel.VMPhotoListFragment" />
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/md_green_550"
-        tools:context=".ui.PhotoListFragment">
+        android:orientation="vertical"
+        tools:context=".ui.view.PhotoListFragment">
 
-        <TextView
-            android:id="@+id/navigateClick"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_to_refresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#494949"
-            android:text="Photo List" />
+            android:layout_height="wrap_content">
 
-    </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:paddingBottom="10dp"
+                android:paddingStart="10dp"
+                tools:listitem="@layout/row_photo" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
 </layout>

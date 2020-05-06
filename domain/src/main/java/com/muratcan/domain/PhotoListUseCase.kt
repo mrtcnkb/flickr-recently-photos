@@ -12,9 +12,9 @@ import javax.inject.Inject
 class PhotoListUseCase @Inject constructor(
     private val repository: PhotoListRepository
 ) {
-    fun fetchRecentlyPhotos(page: Int, perpage: Int): Observable<PhotoListItem> {
+    fun fetchRecentlyPhotos(page: Int): Observable<PhotoListItem> {
         return repository
-            .fetchRecentlyPhotos(page, perpage)
+            .fetchRecentlyPhotos(page)
             .doOnError {
                 it.printStackTrace()
             }

@@ -16,8 +16,4 @@ open class BaseViewModel : ViewModel() {
         }
         super.onCleared()
     }
-
-    operator fun CompositeDisposable.plusAssign(disposable: Disposable) {
-        add(disposable)
-    }
 }

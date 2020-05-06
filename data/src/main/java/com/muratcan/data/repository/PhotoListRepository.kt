@@ -12,8 +12,8 @@ import javax.inject.Inject
 class PhotoListRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource
 ) {
-    fun fetchRecentlyPhotos(page: Int, perpage: Int): Observable<PhotoListItem> =
+    fun fetchRecentlyPhotos(page: Int): Observable<PhotoListItem> =
         remoteDataSource
-            .fetchRecentlyPhotos(page, perpage)
+            .fetchRecentlyPhotos(page)
             .subscribeOn(Schedulers.io())
 }

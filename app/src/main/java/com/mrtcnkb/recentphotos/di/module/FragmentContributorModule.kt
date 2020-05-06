@@ -1,8 +1,8 @@
 package com.mrtcnkb.recentphotos.di.module
 
 import com.mrtcnkb.recentphotos.di.scope.FragmentScope
-import com.mrtcnkb.recentphotos.ui.PhotoListFragment
-import com.mrtcnkb.recentphotos.ui.PhotoDetailFragment
+import com.mrtcnkb.recentphotos.ui.view.PhotoListFragment
+import com.mrtcnkb.recentphotos.ui.view.PhotoDetailFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
