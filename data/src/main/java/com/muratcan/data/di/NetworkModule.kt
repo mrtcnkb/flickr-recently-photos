@@ -2,6 +2,7 @@ package com.muratcan.data.di
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.muratcan.data.BuildConfig
+import com.muratcan.data.remote.RestServiceInterface
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -32,4 +33,10 @@ class NetworkModule {
         OkHttpClient.Builder()
             .readTimeout(60, TimeUnit.SECONDS)
             .connectTimeout(60, TimeUnit.SECONDS).build()
+
+    @Provides
+    @Singleton
+    fun provideRestInterface(retrofit: Retrofit): RestServiceInterface {
+        return retrofit.create(RestServiceInterface::class.java)
+    }
 }

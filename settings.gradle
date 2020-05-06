@@ -1,4 +1,5 @@
-rootProject.name='Default Project'
+rootProject.name='Recently Photos'
 include ':app'
 include ':domain'
 include ':data'
+include ':model'

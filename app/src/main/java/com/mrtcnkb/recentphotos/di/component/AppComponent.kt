@@ -5,6 +5,7 @@ import com.mrtcnkb.recentphotos.RecentPhotosApplication
 import com.mrtcnkb.recentphotos.di.module.AppModule
 import com.mrtcnkb.recentphotos.di.module.ContributorModule
 import com.mrtcnkb.recentphotos.di.module.ViewModelModule
+import com.muratcan.data.di.NetworkModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -16,7 +17,8 @@ import javax.inject.Singleton
     modules = [AndroidInjectionModule::class,
         AppModule::class,
         ViewModelModule::class,
-        ContributorModule::class
+        ContributorModule::class,
+        NetworkModule::class
     ]
 )
 

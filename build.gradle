@@ -5,6 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.0-rc01'
@@ -21,6 +22,9 @@ ext {
     lifecycleVersion = '2.1.0'
     glideVersion = "4.10.0"
     daggerVersion = '2.23.2'
+    rxJavaVersion = '2.2.10'
+    rxKotlinVersion = '2.4.0'
+    rxAndroidVersion = '2.1.1'
     okHttpVersion = "4.2.1"
     retrofitVersion = '2.6.2'
     gsonVersion = '2.8.6'
