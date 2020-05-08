@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.mrtcnkb.recentphotos.R
 import com.mrtcnkb.recentphotos.databinding.PhotoListFragmentBinding
 import com.mrtcnkb.recentphotos.ui.adapter.PhotoListAdapter
@@ -28,7 +26,6 @@ class PhotoListFragment : BaseFragment<VMPhotoListFragment, PhotoListFragmentBin
 
     private var photoListAdapter: PhotoListAdapter? = null
     private var initialPage = 1
-    private lateinit var scrollListener: EndlessScrollListener
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
